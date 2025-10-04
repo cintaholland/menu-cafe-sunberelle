@@ -1,0 +1,296 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap');
+
+/* General Reset and Styling */
+:root {
+    /* Palet Warna Cokelat Elegan Final */
+    --text-color: #4A4442;
+    --accent-color: #7B5C4A;
+    --bg-color: #FBF9F7;
+    --light-bg-color: #EFEBE4;
+    --border-color: #CFCBC4;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.4;
+    margin: 0;
+    padding: 20px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: var(--text-color);
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* --- HEADER / LOGO --- */
+.cafe-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cafe-logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 50%;
+    margin-bottom: 5px;
+    background-color: var(--light-bg-color);
+}
+
+.cafe-name {
+    font-size: 1.8em;
+    letter-spacing: 3px;
+    font-weight: 400;
+}
+
+.cafe-hours {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9em;
+    color: var(--accent-color);
+    margin-top: 5px;
+}
+
+/* --- MAIN MENU LAYOUT --- */
+.menu-layout {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+    border-radius: 5px;
+}
+
+.menu-title-section {
+    margin-bottom: 20px;
+}
+
+/* Wrapper untuk ikon dan judul MENU */
+/* Wrapper untuk ikon dan judul MENU */
+.main-title-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* UBAH: Dorong ke kiri (seperti judul kategori) */
+    gap: 15px;
+    width: 100%;
+
+    /* HAPUS GARIS HORIZONTAL: */
+    /* padding-bottom: 15px; */
+    /* border-bottom: 2px solid var(--accent-color); */
+
+    margin-bottom: 20px;
+}
+
+/* HAPUS: Kita tidak perlu styling ikon lagi di sini karena ikonnya akan dihapus di HTML */
+/* .main-menu-icon { ... } */
+
+.main-menu-icon {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    background-color: transparent;
+    border: none;
+}
+
+.main-menu-title {
+    font-size: 4em;
+    font-weight: 700;
+    text-align: center;
+    /* UBAH JADI LEFT */
+    letter-spacing: 5px;
+    color: var(--accent-color);
+    line-height: 1;
+    margin: 0;
+    /* flex-grow: 1; Hapus ini karena tidak perlu rata kanan lagi */
+
+}
+
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding-top: 20px;
+    position: relative;
+}
+
+/* Garis Pembatas Vertikal */
+.menu-grid::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: var(--border-color);
+}
+
+/* --- MENU SECTIONS --- */
+.menu-category-section {
+    margin-bottom: 30px;
+    padding-top: 10px;
+    padding-bottom: 45px;
+    /* Jarak agar SNACKS turun */
+}
+
+/* Flexbox untuk Header Kategori (untuk merapikan tata letak) */
+.category-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* Default: ikon di kiri */
+    width: 100%;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+/* Penataan untuk Judul yang Harus ke Kanan (FOOD dan COFFEE FRAPPE) */
+.right-align-header {
+    justify-content: flex-end;
+    /* Dorong ke kanan */
+}
+
+/* GAYA KHUSUS UNTUK IKON DI SAMPING JUDUL KATEGORI */
+/* GAYA KHUSUS UNTUK IKON DI SAMPING JUDUL KATEGORI */
+.category-icon {
+    width: 70px;
+    /* NAIKKAN KE 70px */
+    height: 70px;
+    /* NAIKKAN KE 70px */
+    object-fit: contain;
+    background-color: transparent;
+    border: none;
+}
+
+.category-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3em;
+    letter-spacing: 3px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--accent-color);
+    display: inline-block;
+    color: var(--accent-color);
+    margin: 0;
+}
+
+/* --- ITEM LIST --- */
+.item-list {
+    margin-top: 15px;
+}
+
+.item-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    font-size: 1.05em;
+    font-weight: 300;
+    border-bottom: 1px dotted var(--border-color);
+    align-items: center;
+}
+
+.item-list li:last-child {
+    border-bottom: none;
+}
+
+.item-name {
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+.item-price {
+    font-weight: 600;
+    color: var(--accent-color);
+}
+
+/* HAPUS SEMUA STYLE KHUSUS GAMBAR ITEM (has-image-left, has-image-right, menu-item-thumb) */
+/* Karena sudah tidak digunakan lagi di li */
+
+
+/* --- Illustration Box --- */
+
+
+
+.center-illustration-image {
+    width: 100%;
+    max-width: 400px;
+    /* KITA SET KE UKURAN SEDANG/PROPORSIONAL */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* --- FOOTER / QR CODE --- */
+.cafe-footer {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: var(--light-bg-color);
+    margin-top: 40px;
+    border-top: 2px solid var(--border-color);
+}
+
+.qr-code-container {
+    max-width: 200px;
+    margin: 0 auto;
+}
+
+.qr-code-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.cafe-footer p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9em;
+    color: var(--accent-color);
+    letter-spacing: 1px;
+}
+
+/* --- Responsive Design (Untuk HP) --- */
+@media (max-width: 768px) {
+    .menu-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+        padding-top: 0;
+    }
+
+    .menu-grid::before {
+        content: none;
+    }
+
+    .main-title-wrapper {
+        justify-content: center;
+    }
+
+    .main-menu-title {
+        text-align: center;
+    }
+
+    .right-align-header {
+        justify-content: flex-start;
+    }
+}
